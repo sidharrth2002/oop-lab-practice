@@ -26,5 +26,5 @@ public class Lab01q2 {
         System.arraycopy(array1, 0, finalArr, 0, array1.length);
         System.arraycopy(array2, 0, finalArr, array1.length, array2.length);
         return finalArr;
-    }
+    } 
 }
