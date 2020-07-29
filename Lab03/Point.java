@@ -2,14 +2,14 @@ import java.math.*;
 import java.util.Scanner;
 
 public class Point {
-    int x = 0;
-    int y = 0;
-    Point() {}
-    Point(int x, int y) {
+    private int x = 0;
+    private int y = 0;
+    public Point() {}
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    double distance(Point p) {
+    public double distance(Point p) {
         double y_dist = this.y - p.y;
         double x_dist = this.x - p.x;
         double distance = Math.sqrt(Math.pow(y_dist, 2) + Math.pow(x_dist, 2));
