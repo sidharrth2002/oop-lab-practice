@@ -18,6 +18,7 @@ public class Point {
     public String toString() {
         return ("(" + this.x + "," + this.y + ")");
     }
+
     public static void main(String[] args) {
         int point1_x, point1_y, point2_x, point2_y;
         Scanner input = new Scanner(System.in);
