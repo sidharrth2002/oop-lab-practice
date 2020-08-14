@@ -31,7 +31,7 @@ class Triangle {
         System.out.print("Enter x and y (negative to exit): ");
         input_x = input.nextInt();
         input_y = input.nextInt();
-        while (input_x > 0 && input_y > 0) {
+        while (input_x != -1 && input_y != -1) {
             Point point = new Point(input_x, input_y);
             points.add(point);
             System.out.print("Enter x and y (negative to exit): ");
@@ -41,8 +41,8 @@ class Triangle {
             }
             input_y = input.nextInt();
         }
-        for (Point point: points) {
-            System.out.println(point);
+        for (int i=0; i<points.size(); ++i) {
+            System.out.println(i + " " + points.get(i));
         }
 
         System.out.print("Select 3 indexes to form a triangle (negative to exit): ");

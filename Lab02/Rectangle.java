@@ -1,15 +1,15 @@
 public class Rectangle {
     private double width = 1;
     private double height = 1;
-    private static int numberOfRectangles;
+    private static int numberOfRectangles = 0;
     public Rectangle() {
         numberOfRectangles += 1;
     }
     public Rectangle(double recWidth, double recHeight) {
         width = recWidth;
         height = recHeight;
-        numberOfRectangles += 1;
-    }
+        numberOfRectangles++;
+    } 
     public double getWidth() {
         return width;
     }
@@ -56,3 +56,4 @@ class TestProgram {
         System.out.println("#Rectangle object created = " + Rectangle.getNumberOfRectangles());
     }
 }
+

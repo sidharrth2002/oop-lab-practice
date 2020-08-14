@@ -1,8 +1,5 @@
 import java.util.Scanner;
-import java.text.DateFormat;  
-import java.text.SimpleDateFormat;  
 import java.util.Date;  
-import java.util.Calendar;
 
 public class Account {
     private int id = 0;
@@ -15,6 +12,7 @@ public class Account {
     public Account(int id, double balance) {
         this.id = id;
         this.balance = balance;
+        dateCreated = new Date();
     }
     public static void setInterestRate(double newannualInterestRate) {
         annualInterestRate = newannualInterestRate;
@@ -31,19 +29,17 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-    public double getInterestRate() {
+    public static double getInterestRate() {
         return this.annualInterestRate;
     }
-    public String getDateCreated() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
-        String strDate = dateFormat.format(dateCreated);
-        return strDate;
+    public Date getDateCreated() {
+        return dateCreated;
     }
-    public double getMonthyInterestRate() {
+    public double getMonthlyInterestRate() {
         return annualInterestRate/12;
     }
-    public double getMonthyInterest() {
-        return (annualInterestRate/12) * balance; 
+    public double getMonthlyInterest() {
+        return (annualInterestRate/12/100) * balance; 
     }
     public void withdraw(double withdrawalAmount) {
         balance -= withdrawalAmount;
@@ -53,23 +49,23 @@ public class Account {
     }
 }
 
-class TestProgram {
+class Test {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Account.setInterestRate(4.5);
-        Account object = new Account(1234, 10000);
-        System.out.println("Account id = " + object.getid());
-        System.out.println("Created = " + object.getDateCreated());
-        System.out.println("Annual interest rate % = " + object.getInterestRate());
-        System.out.println("Balance = " + object.getBalance());
-        System.out.println("Monthly interest = " + "RM" + object.getMonthyInterest());
+        Account user = new Account(1234, 10000);
+        System.out.println("Account id = " + user.getid());
+        System.out.println("Created = " + user.getDateCreated());
+        System.out.println("Annual interest rate % = " + Account.getInterestRate());
+        System.out.println("Balance = " + user.getBalance());
+        System.out.println("Monthly interest = " + "RM" + user.getMonthlyInterest());
         System.out.print("Enter amount to withdraw: ");
         double amountToWithdraw = input.nextDouble();
-        object.withdraw(amountToWithdraw);
-        System.out.println("Balance = " + object.getBalance());
-        System.out.println("Enter amount to deposit");
+        user.withdraw(amountToWithdraw);
+        System.out.println("Balance = " + user.getBalance());
+        System.out.print("Enter amount to deposit: ");
         double amountToDeposit = input.nextDouble();
-        object.deposit(amountToDeposit);
-        System.out.println("Balance = " + object.getBalance());
+        user.deposit(amountToDeposit);
+        System.out.println("Balance = " + user.getBalance());
     }
 }
