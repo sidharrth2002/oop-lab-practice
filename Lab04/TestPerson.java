@@ -49,14 +49,23 @@ public class TestPerson {
         System.out.println(staff.toString());
         System.out.println(lecturer.toString());
 
-        Person person2 = new Person();
-        Person student2 = new Student();
-        Person staff2 = new Staff();
-        Person lecturer2 = new Lecturer();
-        m(person2);
-        m(student2);
-        m(staff2);
-        m(lecturer2);
+        // Person person2 = new Person();
+        // Person student2 = new Student();
+        // Person staff2 = new Staff();
+        // Person lecturer2 = new Lecturer();
+        // m(person2);
+        // m(student2);
+        // m(staff2);
+        // m(lecturer2);
+
+        System.out.println("With upcasting (polymorphism)");
+        Person people[] = {new Person(),
+                            new Student(),
+                            new Staff(),
+                            new Lecturer()};
+        for (Person person: people) {
+            System.out.println(person);
+        }
     }
     
 }
