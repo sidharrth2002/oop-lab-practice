@@ -16,7 +16,7 @@ public class CheckWebpageLine {
         } 
     }
 
-    public static int countWebpageLine (String URLString) throws IOException {
+    public static int countWebpageLine (String URLString) throws MalformedURLException, IOException {
         URL url = new URL (URLString);
         int count = 0;
         Scanner input = new Scanner(url.openStream());

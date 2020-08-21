@@ -35,11 +35,10 @@ public class Unchecked {
                 System.out.println(randomNumbers[index1] + " + " + randomNumbers[index2] + " = " + total);
             } catch (InputMismatchException ex) {
                 System.out.println("Input Error: 2 positive integers are required.");
-                input.next();
+                input.nextLine();
                 continue;
             } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("Input Error: Invalid array index(s).");
-                // input.next();
                 continue;
             }
         } while (true);
