@@ -36,10 +36,10 @@ public class Unchecked {
             } catch (InputMismatchException ex) {
                 System.out.println("Input Error: 2 positive integers are required.");
                 input.nextLine();
-                continue;
+                // continue;
             } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("Input Error: Invalid array index(s).");
-                continue;
+                // continue;
             }
         } while (true);
 }
